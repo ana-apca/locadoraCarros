@@ -162,6 +162,7 @@
             this.buttonAtualizar.TabIndex = 12;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // buttonNovo
             // 
@@ -181,6 +182,7 @@
             this.buttonDeletar.TabIndex = 14;
             this.buttonDeletar.Text = "Deletar";
             this.buttonDeletar.UseVisualStyleBackColor = true;
+            this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
             // 
             // buttonSalvar
             // 
