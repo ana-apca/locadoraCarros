@@ -26,7 +26,7 @@ namespace locadoraCarros
             conexaoBD.Server = "localhost";
             conexaoBD.Database = "locadora_carros";
             conexaoBD.UserID = "root";
-            conexaoBD.Password = "";
+            conexaoBD.Password = "SK8360flip";
 
             //Realizo a conexão com o banco
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
@@ -64,7 +64,7 @@ namespace locadoraCarros
             conexaoBD.Server = "localhost";
             conexaoBD.Database = "locadora_carros";
             conexaoBD.UserID = "root";
-            conexaoBD.Password = "";
+            conexaoBD.Password = "SK8360flip";
 
             //Realizo a conexão com o banco
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
@@ -124,6 +124,50 @@ namespace locadoraCarros
             textboxNome.Clear();
             comboboxLocal.Text = "";
             comboboxVeiculo.Text = "";
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+            MySqlConnectionStringBuilder conexaoBD = new MySqlConnectionStringBuilder();
+            conexaoBD.Server = "localhost";
+            conexaoBD.Database = "locadora_carros";
+            conexaoBD.UserID = "root";
+            conexaoBD.Password = "SK8360flip";
+            MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
+            try
+            {
+                realizaConexacoBD.Open(); //Abre a conexão com o banco
+
+                MySqlCommand comandoMySql = realizaConexacoBD.CreateCommand(); //Crio um comando SQL
+                comandoMySql.CommandText = "UPDATE clientes SET nome = '" + textboxNome.Text + "', " +
+                    "local_retirada = '" + comboboxLocal.Text + "', " +
+                    "data_retirada = '" + dateTimePickerRetirada.Value.ToString("yyyy-MM-dd") + "', " +
+                    "data_entrega = '" + dateTimePickerDevolucao.Value.ToString("yyyy-MM-dd") + "', " +
+                    "modelo_veiculo = '" + comboboxVeiculo.Text + "' WHERE id = " + textboxId.Text + "";
+                comandoMySql.ExecuteNonQuery();
+
+                realizaConexacoBD.Close(); // Fecho a conexão com o banco
+                MessageBox.Show("Atualizado com sucesso");
+                atualizarGrid();
+                limparCampos();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Não foi possivel abrir a conexão! ");
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void buttonDeletar_Click(object sender, EventArgs e)
+        {
+            MySqlConnectionStringBuilder conexaoBD = new MySqlConnectionStringBuilder();
+            conexaoBD.Server = "localhost";
+            conexaoBD.Database = "locadora_carros";
+            conexaoBD.UserID = "root";
+            conexaoBD.Password = "SK8360flip";
+            MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
+
+           //falta essa lógica com as opções que eu falei no wpp
         }
     }
 }
