@@ -73,7 +73,7 @@ namespace locadoraCarros
                 realizaConexacoBD.Open();
 
                 MySqlCommand comandoMySql = realizaConexacoBD.CreateCommand();
-                comandoMySql.CommandText = "SELECT * from clientes"; //Traz todo mundo da tabela autor
+                comandoMySql.CommandText = "SELECT * from clientes WHERE cliente_ativo = 0"; //Traz todo mundo da tabela autor
                 MySqlDataReader reader = comandoMySql.ExecuteReader();
 
                 dataGridViewLocadora.Rows.Clear();//FAZ LIMPAR A TABELA
@@ -166,8 +166,25 @@ namespace locadoraCarros
             conexaoBD.UserID = "root";
             conexaoBD.Password = "SK8360flip";
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
+            try
+            {
+                realizaConexacoBD.Open(); //Abre a conexão com o banco
 
-           //falta essa lógica com as opções que eu falei no wpp
+                MySqlCommand comandoMySql = realizaConexacoBD.CreateCommand(); //Crio um comando SQL
+                comandoMySql.CommandText = "UPDATE clientes SET cliente_ativo = 1 WHERE id = " + textboxId.Text + "";
+                comandoMySql.ExecuteNonQuery();
+
+                realizaConexacoBD.Close(); // Fecho a conexão com o banco
+                MessageBox.Show("Deletado com sucesso"); //Exibo mensagem de aviso
+                atualizarGrid();
+                limparCampos();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Não foi possivel abrir a conexão! ");
+                Console.WriteLine(ex.Message);
+            }
+
         }
     }
 }

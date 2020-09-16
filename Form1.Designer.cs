@@ -134,6 +134,12 @@
             // comboboxVeiculo
             // 
             this.comboboxVeiculo.FormattingEnabled = true;
+            this.comboboxVeiculo.Items.AddRange(new object[] {
+            "Hyundai",
+            "Fiat",
+            "Volkswagen",
+            "Ford",
+            "Chevrolet"});
             this.comboboxVeiculo.Location = new System.Drawing.Point(836, 62);
             this.comboboxVeiculo.Name = "comboboxVeiculo";
             this.comboboxVeiculo.Size = new System.Drawing.Size(121, 21);
