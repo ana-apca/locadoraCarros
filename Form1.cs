@@ -19,14 +19,54 @@ namespace locadoraCarros
             InitializeComponent();
         }
 
+        private bool ValidarCampos()
+        {
+            bool campoInvalido = false;
+            
+            if (textboxNome.Text == "")
+            {
+                MessageBox.Show(" Campo NOME não pode ser vazio ");
+                campoInvalido = true;
+            }
+            if (comboboxLocal.SelectedItem == null)
+            {
+                MessageBox.Show(" Campo LOCAL DE RETIRDA deve ser preenchido ");
+                campoInvalido = true; 
+            }
+            if (dateTimePickerRetirada.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show(" Campo DATA RETIRADA não pode ser menor que a data atual");
+                campoInvalido = true; 
+            }
+            if (dateTimePickerDevolucao.Value.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show(" Campo DATA DEVOLUÇÃO não pode ser menor que a data atual");
+                campoInvalido = true; 
+            }
+            if (comboboxVeiculo.SelectedItem == null)
+            {
+                MessageBox.Show(" Campo VEÍCULO deve ser selecionado");
+                campoInvalido = true; 
+            }
+            return campoInvalido;
+
+        }
+
+
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            if (ValidarCampos()) 
+            {
+                return;
+            }
+
+
             //Crio a estrutura da conexão com o banco
             MySqlConnectionStringBuilder conexaoBD = new MySqlConnectionStringBuilder();
             conexaoBD.Server = "localhost";
             conexaoBD.Database = "locadora_carros";
             conexaoBD.UserID = "root";
-            conexaoBD.Password = "SK8360flip";
+            conexaoBD.Password = "";
 
             //Realizo a conexão com o banco
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
@@ -64,7 +104,7 @@ namespace locadoraCarros
             conexaoBD.Server = "localhost";
             conexaoBD.Database = "locadora_carros";
             conexaoBD.UserID = "root";
-            conexaoBD.Password = "SK8360flip";
+            conexaoBD.Password = "";
 
             //Realizo a conexão com o banco
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
@@ -73,7 +113,7 @@ namespace locadoraCarros
                 realizaConexacoBD.Open();
 
                 MySqlCommand comandoMySql = realizaConexacoBD.CreateCommand();
-                comandoMySql.CommandText = "SELECT * from clientes WHERE cliente_ativo = 0"; //Traz todo mundo da tabela autor
+                comandoMySql.CommandText = "SELECT * from clientes WHERE cliente_ativo = 0"; //Traz todo mundo da tabela
                 MySqlDataReader reader = comandoMySql.ExecuteReader();
 
                 dataGridViewLocadora.Rows.Clear();//FAZ LIMPAR A TABELA
@@ -94,7 +134,7 @@ namespace locadoraCarros
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro de conexão! ");
+                //MessageBox.Show("Erro de conexão! ");
                 Console.WriteLine(ex.Message);
             }
         }
@@ -128,11 +168,16 @@ namespace locadoraCarros
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
+            if (ValidarCampos())
+            {
+                return;
+            }
+
             MySqlConnectionStringBuilder conexaoBD = new MySqlConnectionStringBuilder();
             conexaoBD.Server = "localhost";
             conexaoBD.Database = "locadora_carros";
             conexaoBD.UserID = "root";
-            conexaoBD.Password = "SK8360flip";
+            conexaoBD.Password = "";
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
             try
             {
@@ -164,7 +209,7 @@ namespace locadoraCarros
             conexaoBD.Server = "localhost";
             conexaoBD.Database = "locadora_carros";
             conexaoBD.UserID = "root";
-            conexaoBD.Password = "SK8360flip";
+            conexaoBD.Password = "";
             MySqlConnection realizaConexacoBD = new MySqlConnection(conexaoBD.ToString());
             try
             {

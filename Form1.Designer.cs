@@ -63,54 +63,60 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(31, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(20, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(111, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(41, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(268, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(105, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "Local de retirada";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(430, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 26);
+            this.label4.Size = new System.Drawing.Size(191, 14);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Data da retirada - (aaaa/mm/dd)\r\n*somente números";
+            this.label4.Text = "Data da retirada - (dd/mm/aaaa)";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(627, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 26);
+            this.label5.Size = new System.Drawing.Size(205, 14);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Data da devolução - (aaaa/mm/dd)\r\n*somente números";
+            this.label5.Text = "Data da devolução - (dd/mm/aaaa)";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(833, 24);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 13);
+            this.label6.Size = new System.Drawing.Size(111, 14);
             this.label6.TabIndex = 5;
             this.label6.Text = "Modelo do veículo";
             // 
@@ -162,42 +168,58 @@
             // 
             // buttonAtualizar
             // 
+            this.buttonAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonAtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAtualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonAtualizar.Location = new System.Drawing.Point(539, 122);
             this.buttonAtualizar.Name = "buttonAtualizar";
             this.buttonAtualizar.Size = new System.Drawing.Size(75, 23);
             this.buttonAtualizar.TabIndex = 12;
             this.buttonAtualizar.Text = "Atualizar";
-            this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.UseVisualStyleBackColor = false;
             this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // buttonNovo
             // 
+            this.buttonNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonNovo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonNovo.Location = new System.Drawing.Point(239, 122);
             this.buttonNovo.Name = "buttonNovo";
             this.buttonNovo.Size = new System.Drawing.Size(75, 23);
             this.buttonNovo.TabIndex = 13;
             this.buttonNovo.Text = "Novo";
-            this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.UseVisualStyleBackColor = false;
             this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // buttonDeletar
             // 
+            this.buttonDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonDeletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDeletar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDeletar.Location = new System.Drawing.Point(684, 122);
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(75, 23);
             this.buttonDeletar.TabIndex = 14;
             this.buttonDeletar.Text = "Deletar";
-            this.buttonDeletar.UseVisualStyleBackColor = true;
+            this.buttonDeletar.UseVisualStyleBackColor = false;
             this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
             // 
             // buttonSalvar
             // 
+            this.buttonSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSalvar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonSalvar.Location = new System.Drawing.Point(378, 122);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 15;
             this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.UseVisualStyleBackColor = false;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // dataGridViewLocadora
@@ -291,6 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1024, 533);
             this.Controls.Add(this.dateTimePickerDevolucao);
             this.Controls.Add(this.dateTimePickerRetirada);
@@ -332,10 +355,6 @@
         private System.Windows.Forms.ComboBox comboboxVeiculo;
         private System.Windows.Forms.TextBox textboxId;
         private System.Windows.Forms.TextBox textboxNome;
-        private System.Windows.Forms.Button buttonAtualizar;
-        private System.Windows.Forms.Button buttonNovo;
-        private System.Windows.Forms.Button buttonDeletar;
-        private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.DataGridView dataGridViewLocadora;
         private locadora_carrosDataSet locadora_carrosDataSet;
         private System.Windows.Forms.BindingSource clientesBindingSource;
@@ -348,6 +367,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVeiculo;
         private System.Windows.Forms.DateTimePicker dateTimePickerRetirada;
         private System.Windows.Forms.DateTimePicker dateTimePickerDevolucao;
+        internal System.Windows.Forms.Button buttonAtualizar;
+        internal System.Windows.Forms.Button buttonNovo;
+        internal System.Windows.Forms.Button buttonDeletar;
+        internal System.Windows.Forms.Button buttonSalvar;
     }
 }
 
